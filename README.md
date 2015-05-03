@@ -10,7 +10,10 @@ bundle exec rackup -p 1987
 Here are the current endpoints our service is providing right now
 ```bash
 curl http://localhost:1987/
+# => this will print out FizzBuzz for 1 to 100
+
 curl http://localhost:1987/ruby
+# => this will return a Ruby implementation of FizzBuzz
 
 # New Feature!
 curl http://localhost:1987/fizz?num=9
