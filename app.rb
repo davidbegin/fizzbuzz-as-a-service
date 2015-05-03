@@ -1,8 +1,19 @@
 require "roda"
-require_relative "app/extension_finder"
+require "json"
 require_relative "app/fizz_buzz_generator"
 
 class App < Roda
+
+  class << self
+    def languages
+      language_config.keys
+    end
+
+    def language_config
+      @language_config ||= JSON.parse(File.read("config/languages.json"))
+    end
+  end
+
   LANGUAGES = [
     "ruby",
     "rust",
@@ -26,9 +37,9 @@ class App < Roda
       "FizzBuzz"
     end
 
-    LANGUAGES.each do |lang|
+    self.class.languages.each do |lang|
       r.on lang do
-        File.read("solutions/#{lang}.#{ExtensionFinder.new(lang).call}")
+        File.read("solutions/#{lang}.#{self.class.language_config.fetch(lang)}")
       end
     end
   end
