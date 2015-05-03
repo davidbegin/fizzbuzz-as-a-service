@@ -24,3 +24,15 @@ curl http://localhost:1987/fizzbuzz?num=30
 curl http://localhost:1987/fizzbuzz?num=29
 # => "29"
 ```
+
+With our new API, you can write more scalable FizzBuzz solutions than ever!
+
+```ruby
+require "net/http"
+require "uri"
+
+(1..100).each do |number|
+  uri = URI.parse("http://localhost:1987/fizzbuzz?num=#{number}")
+  puts Net::HTTP.get_response(uri).body
+end
+```

@@ -28,8 +28,7 @@ class App < Roda
 
     r.get "fizzbuzz" do
       number = CGI.parse(env["QUERY_STRING"]).fetch("num").first.to_i
-      x = FizzBuzzConvertor.new(number).call
-      # require 'pry'; binding.pry; 1
+      FizzBuzzConvertor.new(number).call.to_s
     end
 
     r.on "fizz" do
