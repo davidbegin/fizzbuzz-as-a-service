@@ -1,5 +1,6 @@
 require "roda"
 require_relative "app/extension_finder"
+require_relative "app/fizz_buzz_generator"
 
 class App < Roda
   LANGUAGES = [
@@ -8,7 +9,7 @@ class App < Roda
 
   route do |r|
     r.root do
-      "\n\nWe offer multiple custom Fizzbuzz solutions\n\n"
+      FizzBuzzGenerator.new.call.join("\n")
     end
 
     r.on "fizz" do
