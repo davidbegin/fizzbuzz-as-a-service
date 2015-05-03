@@ -4,7 +4,9 @@ require_relative "app/fizz_buzz_generator"
 
 class App < Roda
   LANGUAGES = [
-    "ruby"
+    "ruby",
+    "rust",
+    "javascript"
   ]
 
   route do |r|

@@ -8,6 +8,8 @@ class ExtensionFinder
   def call
     case language
     when "ruby" then "rb"
+    when "rust" then "rs"
+    when "javascript" then "js"
     else
       raise MissingExtension
     end
