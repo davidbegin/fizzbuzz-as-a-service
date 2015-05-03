@@ -1,6 +1,7 @@
 require "roda"
 require "json"
 require_relative "app/fizz_buzz_generator"
+require_relative "app/fizz_buzz_convertor"
 
 class App < Roda
 
@@ -25,16 +26,18 @@ class App < Roda
       FizzBuzzGenerator.new.call.join("\n")
     end
 
+    r.get "fizzbuzz" do
+      number = CGI.parse(env["QUERY_STRING"]).fetch("num").first.to_i
+      x = FizzBuzzConvertor.new(number).call
+      # require 'pry'; binding.pry; 1
+    end
+
     r.on "fizz" do
       "Fizz"
     end
 
     r.on "buzz" do
       "Buzz"
-    end
-
-    r.on "fizzbuzz" do
-      "FizzBuzz"
     end
 
     self.class.languages.each do |lang|

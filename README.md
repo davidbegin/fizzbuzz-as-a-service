@@ -13,5 +13,14 @@ curl http://localhost:1987/
 curl http://localhost:1987/ruby
 curl http://localhost:1987/fizz
 curl http://localhost:1987/buzz
-curl http://localhost:1987/fizzbuzz
+
+# New Feature!
+curl http://localhost:1987/fizzbuzz?num=9
+# => "Fizz"
+curl http://localhost:1987/fizzbuzz?num=10
+# => "Buzz"
+curl http://localhost:1987/fizzbuzz?num=30
+# => "FizzBuzz"
+curl http://localhost:1987/fizzbuzz?num=29
+# => "29"
 ```
