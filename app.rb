@@ -32,11 +32,13 @@ class App < Roda
     end
 
     r.on "fizz" do
-      "Fizz"
+      number = CGI.parse(env["QUERY_STRING"]).fetch("num").first.to_i
+      FizzChecker.new(number).call.to_s
     end
 
     r.on "buzz" do
-      "Buzz"
+      number = CGI.parse(env["QUERY_STRING"]).fetch("num").first.to_i
+      BuzzChecker.new(number).call.to_s
     end
 
     self.class.languages.each do |lang|

@@ -11,8 +11,18 @@ Here are the current endpoints our service is providing right now
 ```bash
 curl http://localhost:1987/
 curl http://localhost:1987/ruby
-curl http://localhost:1987/fizz
-curl http://localhost:1987/buzz
+
+# New Feature!
+curl http://localhost:1987/fizz?num=9
+# => true
+curl http://localhost:1987/fizz?num=11
+# => false
+
+# New Feature!
+curl http://localhost:1987/buzz?num=10
+# => true
+curl http://localhost:1987/buzz?num=11
+# => false
 
 # New Feature!
 curl http://localhost:1987/fizzbuzz?num=9
