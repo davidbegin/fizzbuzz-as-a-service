@@ -14,6 +14,10 @@ curl http://localhost:1987/
 
 curl http://localhost:1987/ruby
 # => this will return a Ruby implementation of FizzBuzz
+curl http://localhost:1987/rust
+# => this will return a Rust implementation of FizzBuzz
+curl http://localhost:1987/javascript
+# => this will return a Javascript implementation of FizzBuzz
 
 # New Feature!
 curl http://localhost:1987/fizz?num=9
