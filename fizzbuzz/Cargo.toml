@@ -2,3 +2,7 @@
 name = "fizzbuzz"
 version = "0.1.0"
 authors = ["David Begin <davidmichaelbe@gmail.com>"]
+
+[dependencies]
+type_printer = "0.0.1"
+nickel = "*"

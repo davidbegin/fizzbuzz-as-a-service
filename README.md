@@ -7,6 +7,15 @@ Finally the solution to all your problems.
 bundle exec rackup -p 1987
 ```
 
+For Rust (coming soon!)
+```rust
+cd fizzbuzz
+cargo build
+cargo run
+
+curl http://localhost:1987/
+```
+
 Here are the current endpoints our service is providing right now
 ```bash
 curl http://localhost:1987/
