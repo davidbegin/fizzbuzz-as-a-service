@@ -14,6 +14,11 @@ cargo build
 cargo run
 
 curl http://localhost:1987/
+
+// OR
+
+cd fizzbuzz-client
+cargo run
 ```
 
 Here are the current endpoints our service is providing right now
